@@ -13,7 +13,9 @@ class Transfer
   end
   
   def execute_transaction
+    puts self.status
     self.status = "rejected" if !self.valid?
+    puts self.status
     transfer_money if self.status == "pending"
     self.status == "complete" ? !self.valid? : "Transaction rejected. Please check your account balance."
   end
