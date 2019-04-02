@@ -19,8 +19,8 @@ class Transfer
   end
   
   def transfer_money
-      self.sender.deposit(-amount)
-      self.receiver.deposit(amount)
+      self.sender.deposit(-self.amount)
+      self.receiver.deposit(self.amount)
       self.status = "complete"
   end
   
