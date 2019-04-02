@@ -6,7 +6,7 @@ describe 'Transfer' do
   let(:transfer) { Transfer.new(amanda, avi, 50) }
   let(:bad_transfer) { Transfer.new(amanda, avi, 4000) }
 
-=begin  describe 'initialize' do
+  describe 'initialize' do
     it "can initialize a Transfer" do
       expect(transfer).to be_a(Transfer)
     end
@@ -44,25 +44,25 @@ describe 'Transfer' do
       transfer.valid?
     end
   end
-=end
+
   describe '#execute_transaction' do
     
-    #it "can execute a successful transaction between two accounts" do
-     # transfer.execute_transaction
-      #expect(amanda.balance).to eq(950)
-    #  expect(avi.balance).to eq(1050)
-     # expect(transfer.status).to eq("complete")
-    #end
+    it "can execute a successful transaction between two accounts" do
+      transfer.execute_transaction
+      expect(amanda.balance).to eq(950)
+      expect(avi.balance).to eq(1050)
+      expect(transfer.status).to eq("complete")
+    end
 
-    #it "each transfer can only happen once" do
-     # transfer.execute_transaction
-    #  expect(amanda.balance).to eq(950)
-    #  expect(avi.balance).to eq(1050)
-    #  expect(transfer.status).to eq("complete")
-    #  transfer.execute_transaction
-    #  expect(amanda.balance).to eq(950)
-    #  expect(avi.balance).to eq(1050)
-    #end
+    it "each transfer can only happen once" do
+      transfer.execute_transaction
+      expect(amanda.balance).to eq(950)
+      expect(avi.balance).to eq(1050)
+      expect(transfer.status).to eq("complete")
+      transfer.execute_transaction
+      expect(amanda.balance).to eq(950)
+      expect(avi.balance).to eq(1050)
+    end
     
     it "rejects a transfer if the sender doesn't have a valid account" do
       expect(bad_transfer.execute_transaction).to eq("Transaction rejected. Please check your account balance.")
