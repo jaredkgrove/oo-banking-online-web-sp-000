@@ -20,4 +20,8 @@ class Transfer
       self.status = "complete"
     end
   end
+  
+  def transfer_money
+    
+  end
 end
