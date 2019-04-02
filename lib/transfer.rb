@@ -9,7 +9,7 @@ class Transfer
   end
   
   def valid?
-    self.sender.valid? && self.receiver.valid?
+    self.sender.valid?(self.amount) && self.receiver.valid?(self.amount)
   end
   
   def execute_transaction
