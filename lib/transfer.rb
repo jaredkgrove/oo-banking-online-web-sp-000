@@ -14,8 +14,8 @@ class Transfer
   
   def execute_transaction
     self.status = "rejected" if !self.valid?
-    self.status == "pending"
-
+    transfer_money if self.status == "pending"
+    
   end
   
   def transfer_money
