@@ -5,7 +5,7 @@ describe 'Transfer' do
   let(:amanda) { BankAccount.new("Amanda") }
   let(:transfer) { Transfer.new(amanda, avi, 50) }
   let(:bad_transfer) { Transfer.new(amanda, avi, 4000) }
-
+#/
   describe 'initialize' do
     it "can initialize a Transfer" do
       expect(transfer).to be_a(Transfer)
