@@ -14,6 +14,7 @@ class Transfer
   
   def execute_transaction
     puts self.status
+    puts self.valid?
     self.status = "rejected" if !self.valid?
     puts self.status
     transfer_money if self.status == "pending"
