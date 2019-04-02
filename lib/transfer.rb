@@ -1,8 +1,8 @@
 class Transfer
-  attr_reader :sending_account, :receiving_account, :transfer_amount
-  def initialize(sending_account, receiving_account, transfer_amount)
-    @sending_account = sending_account
-    @receiving_account = receiving_account
+  attr_reader :sender, :receiver, :transfer_amount
+  def initialize(sender, receiver, transfer_amount)
+    @sender = sender
+    @receiver = receiver
     @transfer_amount = transfer_amount
   end
 end
