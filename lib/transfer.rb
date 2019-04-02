@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    
+    self.send.deposit(-amount)
     self.status = "complete"
   end
 end
