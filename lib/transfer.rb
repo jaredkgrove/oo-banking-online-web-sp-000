@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    
+    self.status = "rejected" if !self.valid?
     if self.status == "pending"
       self.sender.deposit(-amount)
       self.receiver.deposit(amount)
