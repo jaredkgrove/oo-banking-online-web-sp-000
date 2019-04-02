@@ -1,4 +1,4 @@
 class Transfer
   
-  def initialize(sending_account, recieving_account, transfer_ammount)
+  def initialize(sending_account, receiving_account, transfer_amount)
 end
