@@ -15,13 +15,13 @@ class Transfer
   def execute_transaction
     self.status = "rejected" if !self.valid?
     if self.status == "pending"
-      self.sender.deposit(-amount)
-      self.receiver.deposit(amount)
-      self.status = "complete"
+
     end
   end
   
   def transfer_money
-    
+      self.sender.deposit(-amount)
+      self.receiver.deposit(amount)
+      self.status = "complete"
   end
 end
