@@ -9,7 +9,5 @@ class BankAccount
   
   def deposit(ammount)
     balance =+ ammount
-    
-    
   end
 end
