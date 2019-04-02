@@ -12,6 +12,6 @@ class Transfer
   end
   
   def execute_transaction
-    self.status = "complete"
+    @status = "complete"
   end
 end
