@@ -9,7 +9,7 @@ class Transfer
   end
   
   def valid?
-    puts self.sender.valid? + " sender"
+    puts "#{self.sender.valid?}  sender"
     self.sender.valid? && self.receiver.valid?
   end
   
